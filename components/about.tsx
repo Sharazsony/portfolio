@@ -3,13 +3,6 @@
 import { useRef, useEffect } from "react"
 import { motion, useInView } from "framer-motion"
 
-const skills = [
-  { name: "Python", level: 90 },
-  { name: "C++", level: 85 },
-  { name: "Data Analysis", level: 92 },
-  { name: "SQL", level: 88 },
-]
-
 export default function About() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
@@ -158,7 +151,7 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="relative min-h-screen py-20 flex items-center justify-center overflow-hidden">
+    <section id="about" className="relative min-h-[60vh] py-12 flex items-center justify-center overflow-hidden">
       {/* Background canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full"></canvas>
 
@@ -170,76 +163,36 @@ export default function About() {
           animate={isInView ? "visible" : "hidden"}
           className="max-w-4xl mx-auto"
         >
+          {/* Floating headline */}
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600"
+            className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600"
+            whileHover={{ scale: 1.05, rotate: -2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             Who is Sharaz Masih?
           </motion.h2>
 
+          {/* Animated description with typewriter effect */}
           <motion.div
             variants={itemVariants}
-            className="relative bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-xl p-8 mb-12 shadow-[0_0_15px_rgba(0,255,255,0.3)]"
+            className="relative bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-xl p-6 mb-8 shadow-[0_0_15px_rgba(0,255,255,0.3)]"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-600 opacity-20 blur-md rounded-xl"></div>
-            <p className="text-lg text-gray-300 leading-relaxed relative z-10">
-              Aspiring Data Scientist with expertise in programming, data analysis, and database management. Passionate
-              about AI-driven solutions and predictive analytics.
-            </p>
-          </motion.div>
-
-          <motion.h3 variants={itemVariants} className="text-2xl font-semibold mb-8 text-center text-cyan-300">
-            Core Competencies
-          </motion.h3>
-
-          <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                className="relative group perspective"
-                whileHover={{ scale: 1.05, rotateY: 10 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="relative bg-black/60 backdrop-blur-sm border border-cyan-500/30 rounded-lg p-6 h-40 flex flex-col items-center justify-center transform transition-all duration-500 group-hover:shadow-[0_0_15px_rgba(0,255,255,0.5)]">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-purple-600 opacity-20 blur-sm rounded-lg group-hover:opacity-30 transition-opacity duration-300"></div>
-
-                  <div className="w-20 h-20 mb-4 relative">
-                    <svg className="w-full h-full" viewBox="0 0 100 100">
-                      <circle
-                        className="text-gray-800"
-                        strokeWidth="8"
-                        stroke="currentColor"
-                        fill="transparent"
-                        r="40"
-                        cx="50"
-                        cy="50"
-                      />
-                      <circle
-                        className="text-cyan-400"
-                        strokeWidth="8"
-                        strokeLinecap="round"
-                        stroke="currentColor"
-                        fill="transparent"
-                        r="40"
-                        cx="50"
-                        cy="50"
-                        strokeDasharray={`${2 * Math.PI * 40}`}
-                        strokeDashoffset={`${2 * Math.PI * 40 * (1 - skill.level / 100)}`}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex items-center justify-center text-lg font-bold text-cyan-300">
-                      {skill.level}%
-                    </div>
-                  </div>
-
-                  <h4 className="text-lg font-semibold text-white">{skill.name}</h4>
-                </div>
-              </motion.div>
-            ))}
+            <motion.p
+              className="text-lg text-gray-300 leading-relaxed relative z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              Versatile tech enthusiast with a strong foundation in programming, data analysis, and web development. 
+              Skilled in C++ (OOP, DS), databases, and Python (Pandas, Matplotlib, NumPy) for transforming data into actionable insights. 
+              Experienced in Power BI and exploratory data analysis (EDA). 
+              Passionate about building innovative solutions that connect technology with real-world impact.
+            </motion.p>
           </motion.div>
         </motion.div>
       </div>
     </section>
   )
 }
-

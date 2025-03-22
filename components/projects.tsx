@@ -7,14 +7,11 @@ import { X, Github } from "lucide-react"; // Import Github icon
 const projects = [
   {
     id: 1,
-    title: "Flex Management System",
-    techStack: ["C++", "OOP", "Text Files"],
-    description:
-      "A comprehensive management system built with C++ that utilizes object-oriented programming principles for efficient data handling and storage in text files.",
-    longDescription:
-      "This project implements a robust management system using C++ with a focus on object-oriented design patterns. It features user authentication, role-based access control, and efficient data manipulation. The system uses file I/O operations to persist data in text files, making it lightweight and portable. Custom data structures ensure optimal performance even with large datasets.",
-    image: "/flex.png?height=400&width=600",
-    githubLink: "https://github.com/yourusername/flex-management-system", // Add GitHub link
+    title: "Gym Analysis and Visualization ",
+    "description": "This dataset includes 12 variables and 879 values of gym members' exercise routines, physical attributes, and fitness metrics, such as heart rate, calories burned, and workout duration. It allows for comprehensive analysis of fitness patterns, athlete progression, and health trends.",
+    "techStack": ["R", "Google Colab", "Data Analytics","Data Visualization", "EDA", "Continuous Probability Distributions"],
+    image: "/gym.webp?height=400&width=600",
+    githubLink: "https://github.com/Sharazsony/Gym-Analysis-and-Tracking/tree/main/Gym-Analysis-and-Tracking-main", // Add GitHub link
   },
   {
     id: 2,
@@ -45,11 +42,14 @@ const projects = [
   },
   {
     id: 5,
-    title: "Gym Analysis and Visualization ",
-    "description": "This dataset includes 12 variables and 879 values of gym members' exercise routines, physical attributes, and fitness metrics, such as heart rate, calories burned, and workout duration. It allows for comprehensive analysis of fitness patterns, athlete progression, and health trends.",
-    "techStack": ["R", "Google Colab", "Data Analytics","Data Visualization", "EDA", "Continuous Probability Distributions"],
-    image: "/gym.webp?height=400&width=600",
-    githubLink: "https://github.com/Sharazsony/Gym-Analysis-and-Tracking/tree/main/Gym-Analysis-and-Tracking-main", // Add GitHub link
+    title: "Flex Management System",
+    techStack: ["C++", "OOP", "Text Files"],
+    description:
+      "A comprehensive management system built with C++ that utilizes object-oriented programming principles for efficient data handling and storage in text files.",
+    longDescription:
+      "This project implements a robust management system using C++ with a focus on object-oriented design patterns. It features user authentication, role-based access control, and efficient data manipulation. The system uses file I/O operations to persist data in text files, making it lightweight and portable. Custom data structures ensure optimal performance even with large datasets.",
+    image: "/flex.png?height=400&width=600",
+    githubLink: "https://github.com/yourusername/flex-management-system", // Add GitHub link
   },
   {
     id: 6,
