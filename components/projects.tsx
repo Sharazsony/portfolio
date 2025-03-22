@@ -7,25 +7,25 @@ import { X, Github } from "lucide-react"; // Import Github icon
 const projects = [
   {
     id: 1,
-    title: "Flex",
+    title: "Flex Management System",
     techStack: ["C++", "OOP", "Text Files"],
     description:
       "A comprehensive management system built with C++ that utilizes object-oriented programming principles for efficient data handling and storage in text files.",
     longDescription:
       "This project implements a robust management system using C++ with a focus on object-oriented design patterns. It features user authentication, role-based access control, and efficient data manipulation. The system uses file I/O operations to persist data in text files, making it lightweight and portable. Custom data structures ensure optimal performance even with large datasets.",
-    image: "/voting.jpg?height=400&width=600",
+    image: "/flex.png?height=400&width=600",
     githubLink: "https://github.com/yourusername/flex-management-system", // Add GitHub link
   },
   {
     id: 2,
 
     "title": "Election Management System",
-    "techStack": ["C#", ".NET Framework", "Oracle DB", "SQL", "PL/SQL"],
+    "techStack": ["C#", ".NET Framework", "Oracle DB", "SQL"],
     "description": "Desktop application for comprehensive election data management. Features role-based access control and tracking.",
     "longDescription": "A robust and secure election management system designed for efficient handling of voter data. This application ensures role-based access control, secure database management using Oracle DB, and streamlined processes for election tracking. Built with C# and .NET Framework, it provides an intuitive user interface and ensures data integrity through SQL and PL/SQL-based operations.",
     
     image: "/voting.jpg?height=400&width=600",
-    githubLink: "https://github.com/yourusername/predictive-analytics-dashboard", // Add GitHub link
+    githubLink: "https://github.com/Sharazsony", // Add GitHub link
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const projects = [
     "description": "Console-based implementation. The player drives a brown car to collect rewards while avoiding blue opponent cars in a racing arena. Collisions reduce lives, refill rewards, and the score and lives are shown on the screen.",
     "techStack": ["C++", "Console-based", "Data Structures", "Algorithms"],
     image: "/DODGE-EM.png?height=400&width=600",
-    githubLink: "https://github.com/yourusername/neural-network-classifier", // Add GitHub link
+    githubLink: "https://github.com/Sharazsony/DODGE-EM-Car-Game/tree/main/DODGE-EM-Car-Game-main", // Add GitHub link
   },
   {
     id: 4,
@@ -42,6 +42,30 @@ const projects = [
     "techStack": ["C++", "Data Structures", "Algorithms", "Trie Trees", "Stack"],
     image: "/dictionary.png?height=400&width=600",
     githubLink: "https://github.com/yourusername/distributed-database-system", // Add GitHub link
+  },
+  {
+    id: 5,
+    title: "Gym Analysis and Visualization ",
+    "description": "This dataset includes 12 variables and 879 values of gym members' exercise routines, physical attributes, and fitness metrics, such as heart rate, calories burned, and workout duration. It allows for comprehensive analysis of fitness patterns, athlete progression, and health trends.",
+    "techStack": ["R", "Google Colab", "Data Analytics","Data Visualization", "EDA", "Continuous Probability Distributions"],
+    image: "/gym.webp?height=400&width=600",
+    githubLink: "https://github.com/Sharazsony/Gym-Analysis-and-Tracking/tree/main/Gym-Analysis-and-Tracking-main", // Add GitHub link
+  },
+  {
+    id: 6,
+    "title": "WhatsApp Clone",
+    "description": "A P2P messenger enabling direct user communication without a central server, using WebRTC for real-time interaction. It ensures secure messaging with encryption and supports text, file sharing, and voice messaging.",
+    "techStack": ["HTML", "CSS", "JavaScript", "Node.js", "WebRTC","UDP/TCP", "Encryption"],
+    image: "/WhatsAppCloneApp.png?height=400&width=600",
+    githubLink: "https://github.com/Sharazsony/Whatsapp-Clone-CN-project-/tree/main/WhatsApp-Clone-main", // Add GitHub link
+  },
+  {
+    id: 7,
+    "title": "University of Agriculture - Entry Test Insights",
+    "description": "A Power BI Dashboard presenting key insights from the 1st Entry Test conducted at the University of Agriculture. It provides a visual analysis of student participation, academic backgrounds, and test performance.",
+    "techStack": ["EDA", "Data Analysis", "Data Visualization", "Power BI", "SQL", "DAX"],
+    image: "Agri.jpg?height=400&width=600",
+    githubLink: "https://github.com/Sharazsony/University-of-Agriculture---Entry-Test-Insights/blob/main/README.md", // Add GitHub link
   },
 ];
 
