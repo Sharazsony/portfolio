@@ -7,7 +7,7 @@ import { X, Github } from "lucide-react"; // Import Github icon
 const projects = [
   {
     id: 1,
-    title: "Flex Management System",
+    title: "Flex",
     techStack: ["C++", "OOP", "Text Files"],
     description:
       "A comprehensive management system built with C++ that utilizes object-oriented programming principles for efficient data handling and storage in text files.",
