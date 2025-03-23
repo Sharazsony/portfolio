@@ -1,12 +1,13 @@
 "use client"
 
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import { motion, useInView } from "framer-motion"
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [showOptions, setShowOptions] = useState(false)
 
   // Background animation
   useEffect(() => {
@@ -150,6 +151,21 @@ export default function About() {
     },
   }
 
+  const handleCVAction = (action: "preview" | "download") => {
+    const cvUrl = "/SharazCV.pdf"
+    if (action === "preview") {
+      window.open(cvUrl, "_blank")
+    } else {
+      const link = document.createElement("a")
+      link.href = cvUrl
+      link.download = "Sharaz_Masih_CV.pdf"
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
+    setShowOptions(false)
+  }
+
   return (
     <section id="about" className="relative min-h-[60vh] py-12 flex items-center justify-center overflow-hidden">
       {/* Background canvas */}
@@ -193,6 +209,61 @@ export default function About() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* CV/Resume Icon with Fire Animation */}
+      <div className="fixed left-8 bottom-8 z-20">
+        <div className="relative">
+          <button
+            onClick={() => setShowOptions(!showOptions)}
+            className="p-2 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-full shadow-[0_0_15px_rgba(0,255,255,0.3)] hover:scale-105 transition-transform relative"
+          >
+            {/* Fire Animation */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                borderRadius: "9999px",
+                animation: "fire 1.5s infinite",
+                boxShadow: "0 0 10px rgba(0, 191, 255, 0.5), 0 0 20px rgba(0, 191, 255, 0.5), 0 0 30px rgba(0, 191, 255, 0.5)",
+              }}
+            ></div>
+            <img src="/icons.png" alt="CV" className="w-20 h-20 relative z-10" />
+          </button>
+          {showOptions && (
+            <div className="absolute left-0 bottom-14 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-lg shadow-[0_0_15px_rgba(0,255,255,0.3)] p-2">
+              <button
+                onClick={() => handleCVAction("preview")}
+                className="block w-full text-left px-4 py-2 text-gray-300 hover:bg-cyan-500/10 rounded-lg"
+              >
+                Preview CV
+              </button>
+              <button
+                onClick={() => handleCVAction("download")}
+                className="block w-full text-left px-4 py-2 text-gray-300 hover:bg-cyan-500/10 rounded-lg"
+              >
+                Download CV
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Inline CSS for Fire Animation */}
+      <style>
+        {`
+          @keyframes fire {
+            0% {
+              box-shadow: 0 0 10px rgba(185, 158, 19, 0.5), 0 0 20px rgba(188, 177, 32, 0.5), 0 0 30px rgba(255, 98, 0, 0.5);
+            }
+            50% {
+              box-shadow: 0 0 15px rgba(255, 145, 0, 0.7), 0 0 25px rgba(255, 166, 0, 0.7), 0 0 35px rgba(255, 0, 0, 0.7);
+            }
+            100% {
+              box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(0, 191, 255, 0.5), 0 0 30px rgba(195, 255, 0, 0.5);
+            }
+          }
+        `}
+      </style>
     </section>
   )
 }

@@ -8,17 +8,17 @@ export default function Footer() {
     {
       name: "GitHub",
       icon: <Github className="w-4 h-4" />,
-      url: "https://github.com/",
+      url: "https://github.com/Sharazsony",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-4 h-4" />,
-      url: "https://linkedin.com/in/",
+      url: "http://www.linkedin.com/in/sharaz-soni-542381313",
     },
     {
       name: "Email",
       icon: <Mail className="w-4 h-4" />,
-      url: "mailto:contact@example.com",
+      url: "sharazsony@gmail.com",
     },
   ]
 

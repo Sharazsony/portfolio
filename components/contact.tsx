@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
@@ -32,20 +31,38 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    // Mock API call to simulate sending an email
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      })
 
-    toast({
-      title: "Message Sent",
-      description: "Your transmission has been received. I'll respond shortly.",
-    })
-
-    setFormState({
-      name: "",
-      email: "",
-      message: "",
-    })
-    setIsSubmitting(false)
+      if (response.ok) {
+        toast({
+          title: "Message Sent",
+          description: "Your transmission has been received. I'll respond shortly.",
+        })
+        setFormState({
+          name: "",
+          email: "",
+          message: "",
+        })
+      } else {
+        throw new Error("Failed to send message")
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const containerVariants = {
@@ -73,17 +90,17 @@ export default function Contact() {
     {
       name: "GitHub",
       icon: <Github className="w-5 h-5" />,
-      url: "https://github.com/",
+      url: "https://github.com/Sharazsony",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin className="w-5 h-5" />,
-      url: "https://linkedin.com/in/",
+      url: "https://www.linkedin.com/in/sharaz-soni-542381313",
     },
     {
       name: "Email",
       icon: <Mail className="w-5 h-5" />,
-      url: "mailto:contact@example.com",
+      url: "mailto:sharazsony@gmail.com",
     },
   ]
 
@@ -195,7 +212,7 @@ export default function Contact() {
                 <div className="space-y-4 mb-10">
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Mail className="w-5 h-5 text-cyan-400" />
-                    <span>contact@example.com</span>
+                    <span>sharazsony@gmail.com</span>
                   </div>
                 </div>
               </div>
@@ -228,3 +245,32 @@ export default function Contact() {
   )
 }
 
+// Mock API handler (for demonstration purposes)
+const mockApiHandler = async (req: any, res: any) => {
+  if (req.method === "POST") {
+    // Simulate a delay to mimic network latency
+    await new Promise((resolve) => setTimeout(resolve, 1500))
+
+    // Simulate a successful response
+    res.status(200).json({ message: "Email sent successfully" })
+  } else {
+    res.status(405).json({ message: "Method not allowed" })
+  }
+}
+
+// Mock fetch implementation (for demonstration purposes)
+const fetch = async (url: string, options: any) => {
+  if (url === "/api/send-email" && options.method === "POST") {
+    const req = { method: "POST", body: options.body }
+    const res = {
+      status: (code: number) => ({
+        json: (data: any) => ({ ok: code === 200, ...data }),
+      }),
+    }
+
+    await mockApiHandler(req, res)
+    return res.status(200).json({ message: "Email sent successfully" })
+  }
+
+  return { ok: false }
+}
