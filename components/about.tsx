@@ -227,7 +227,7 @@ export default function About() {
                 boxShadow: "0 0 10px rgba(0, 191, 255, 0.5), 0 0 20px rgba(0, 191, 255, 0.5), 0 0 30px rgba(0, 191, 255, 0.5)",
               }}
             ></div>
-            <img src="/icons.png" alt="CV" className="w-20 h-20 relative z-10" />
+            <img src="/icons.png" alt="CV" className="w-10 h-10 relative z-10" />
           </button>
           {showOptions && (
             <div className="absolute left-0 bottom-14 bg-black/50 backdrop-blur-md border border-cyan-500/30 rounded-lg shadow-[0_0_15px_rgba(0,255,255,0.3)] p-2">

@@ -7,11 +7,11 @@ import { X, Github } from "lucide-react"; // Import Github icon
 const projects = [
   {
     id: 1,
-    title: "Gym Analysis and Visualization ",
-    "description": "This dataset includes 12 variables and 879 values of gym members' exercise routines, physical attributes, and fitness metrics, such as heart rate, calories burned, and workout duration. It allows for comprehensive analysis of fitness patterns, athlete progression, and health trends.",
-    "techStack": ["R", "Google Colab", "Data Analytics","Data Visualization", "EDA", "Continuous Probability Distributions"],
-    image: "/gym.webp?height=400&width=600",
-    githubLink: "https://github.com/Sharazsony/Gym-Analysis-and-Tracking/tree/main/Gym-Analysis-and-Tracking-main", // Add GitHub link
+    "title": "WhatsApp Clone",
+    "description": "A P2P messenger enabling direct user communication without a central server, using WebRTC for real-time interaction. It ensures secure messaging with encryption and supports text, file sharing, and voice messaging.",
+    "techStack": ["HTML", "CSS", "JavaScript", "Node.js", "WebRTC","UDP/TCP", "Encryption"],
+    image: "/WhatsAppCloneApp.png?height=400&width=600",
+    githubLink: "https://github.com/Sharazsony/Whatsapp-Clone-CN-project-/tree/main/WhatsApp-Clone-main", // Add GitHub link
   },
   {
     id: 2,
@@ -53,11 +53,11 @@ const projects = [
   },
   {
     id: 6,
-    "title": "WhatsApp Clone",
-    "description": "A P2P messenger enabling direct user communication without a central server, using WebRTC for real-time interaction. It ensures secure messaging with encryption and supports text, file sharing, and voice messaging.",
-    "techStack": ["HTML", "CSS", "JavaScript", "Node.js", "WebRTC","UDP/TCP", "Encryption"],
-    image: "/WhatsAppCloneApp.png?height=400&width=600",
-    githubLink: "https://github.com/Sharazsony/Whatsapp-Clone-CN-project-/tree/main/WhatsApp-Clone-main", // Add GitHub link
+    title: "Gym Analysis and Visualization ",
+    "description": "This dataset includes 12 variables and 879 values of gym members' exercise routines, physical attributes, and fitness metrics, such as heart rate, calories burned, and workout duration. It allows for comprehensive analysis of fitness patterns, athlete progression, and health trends.",
+    "techStack": ["R", "Google Colab", "Data Analytics","Data Visualization", "EDA", "Continuous Probability Distributions"],
+    image: "/gym.webp?height=400&width=600",
+    githubLink: "https://github.com/Sharazsony/Gym-Analysis-and-Tracking/tree/main/Gym-Analysis-and-Tracking-main", // Add GitHub link
   },
   {
     id: 7,
